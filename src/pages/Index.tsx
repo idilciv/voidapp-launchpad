@@ -2,33 +2,15 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Shield, Target, BarChart3 } from "lucide-react";
 import { toast } from "sonner";
-
-const features = [
-  {
-    icon: Shield,
-    title: "Smart Shielding",
-    description: "Intelligently blocks distracting apps based on your habits and schedule.",
-  },
-  {
-    icon: Target,
-    title: "Deep Focus Sessions",
-    description: "Enter distraction-free zones with timed focus sessions tailored to you.",
-  },
-  {
-    icon: BarChart3,
-    title: "Progress Tracking",
-    description: "Visualize your attention recovery journey with detailed analytics.",
-  },
-];
+import earthHorizon from "@/assets/earth-horizon.jpg";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
   visible: (i: number) => ({
     opacity: 1,
     y: 0,
-    transition: { delay: i * 0.15, duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] as [number, number, number, number] },
+    transition: { delay: i * 0.15, duration: 0.7, ease: [0.25, 0.46, 0.45, 0.94] as [number, number, number, number] },
   }),
 };
 
@@ -43,14 +25,22 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background text-foreground font-sans overflow-hidden">
-      {/* Ambient glow */}
-      <div className="fixed top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] rounded-full bg-primary/5 blur-[120px] animate-pulse-glow pointer-events-none" />
+    <div className="relative min-h-screen bg-background text-foreground font-sans overflow-hidden flex flex-col">
+      {/* Earth horizon background */}
+      <div className="absolute inset-0 z-0">
+        <img
+          src={earthHorizon}
+          alt=""
+          className="absolute bottom-0 left-0 w-full h-auto object-cover object-top"
+        />
+        {/* Fade overlay to blend top into black */}
+        <div className="absolute inset-0 bg-gradient-to-b from-background via-background/80 to-transparent" />
+      </div>
 
       {/* Nav */}
-      <nav className="relative z-10 flex items-center justify-between px-6 md:px-12 py-6 max-w-6xl mx-auto">
-        <span className="text-lg font-semibold tracking-tight">
-          <span className="text-primary">M</span>istify
+      <nav className="relative z-10 flex items-center justify-between px-6 md:px-12 py-6 max-w-6xl mx-auto w-full">
+        <span className="text-lg font-semibold tracking-tight text-foreground">
+          Mistify
         </span>
         <span className="text-xs font-mono text-muted-foreground tracking-widest uppercase">
           Coming Soon
@@ -58,88 +48,48 @@ const Index = () => {
       </nav>
 
       {/* Hero */}
-      <main className="relative z-10 max-w-4xl mx-auto px-6 md:px-12 pt-20 md:pt-32 pb-24">
+      <main className="relative z-10 flex-1 flex flex-col items-center justify-center max-w-3xl mx-auto px-6 md:px-12 pb-32">
         <motion.div
           initial="hidden"
           animate="visible"
           className="text-center"
         >
-          <motion.p
+          <motion.h1
             custom={0}
             variants={fadeUp}
-            className="text-xs font-mono text-primary tracking-[0.3em] uppercase mb-6"
+            className="text-3xl md:text-5xl lg:text-[3.5rem] font-semibold tracking-tight leading-[1.15] mb-6 text-foreground"
           >
-            Digital Renaissance
-          </motion.p>
-
-          <motion.h1
-            custom={1}
-            variants={fadeUp}
-            className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.1] mb-6"
-          >
-            Reclaim Your
-            <br />
-            <span className="text-primary">Attention Span.</span>
+            Attention is the most valuable asset in 21th century, protect it.
           </motion.h1>
 
           <motion.p
-            custom={2}
+            custom={1}
             variants={fadeUp}
-            className="text-muted-foreground text-lg md:text-xl max-w-xl mx-auto mb-12 leading-relaxed"
+            className="text-muted-foreground text-base md:text-lg max-w-md mx-auto mb-10 leading-relaxed"
           >
-            Mistify blocks distracting apps to help you focus on what truly matters.
+            Mistify is a focus app that blocks distracting apps to help you reduce your screen time.
           </motion.p>
 
           <motion.form
-            custom={3}
+            custom={2}
             variants={fadeUp}
             onSubmit={handleSubmit}
             className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto"
           >
             <Input
               type="email"
-              placeholder="your@email.com"
+              placeholder="Your Email Address"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="h-12 bg-secondary border-border text-foreground placeholder:text-muted-foreground font-mono text-sm"
+              className="h-12 bg-secondary border-border text-foreground placeholder:text-muted-foreground text-sm"
               required
             />
-            <Button type="submit" variant="glow" size="lg" className="h-12 px-8 font-semibold">
-              Join the Waitlist
+            <Button type="submit" variant="glow" size="lg" className="h-12 px-8 font-semibold whitespace-nowrap">
+              Get Notified
             </Button>
           </motion.form>
         </motion.div>
-
-        {/* Features */}
-        <motion.section
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-50px" }}
-          className="mt-32 grid md:grid-cols-3 gap-8"
-        >
-          {features.map((feature, i) => (
-            <motion.div
-              key={feature.title}
-              custom={i}
-              variants={fadeUp}
-              className="group p-6 rounded-xl border border-border bg-card/50 hover:border-primary/30 transition-colors duration-300"
-            >
-              <feature.icon className="w-8 h-8 text-primary mb-4" strokeWidth={1.5} />
-              <h3 className="text-base font-semibold mb-2">{feature.title}</h3>
-              <p className="text-sm text-muted-foreground leading-relaxed">
-                {feature.description}
-              </p>
-            </motion.div>
-          ))}
-        </motion.section>
       </main>
-
-      {/* Footer */}
-      <footer className="relative z-10 text-center py-8 border-t border-border">
-        <p className="text-xs text-muted-foreground font-mono">
-          © 2026 Mistify. All rights reserved.
-        </p>
-      </footer>
     </div>
   );
 };
