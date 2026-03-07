@@ -25,7 +25,7 @@ const Index = () => {
   };
 
   return (
-    <div className="relative min-h-screen bg-background text-foreground font-sans overflow-hidden flex flex-col">
+    <div className="relative min-h-[200vh] bg-background text-foreground font-sans overflow-x-hidden flex flex-col">
       {/* Earth horizon background */}
       <div className="absolute inset-0 z-0">
         <img
@@ -33,7 +33,6 @@ const Index = () => {
           alt=""
           className="absolute bottom-0 left-0 w-full h-auto object-cover object-top"
         />
-        {/* Fade overlay to blend top into black */}
         <div className="absolute inset-0 bg-gradient-to-b from-background via-background/80 to-transparent" />
       </div>
 
@@ -48,7 +47,7 @@ const Index = () => {
       </nav>
 
       {/* Hero */}
-      <main className="relative z-10 flex-1 flex flex-col items-center justify-center max-w-3xl mx-auto px-6 md:px-12 pb-32">
+      <main className="relative z-10 flex flex-col items-center max-w-3xl mx-auto px-6 md:px-12 pt-16 md:pt-24">
         <motion.div
           initial="hidden"
           animate="visible"
@@ -88,6 +87,31 @@ const Index = () => {
               Get Notified
             </Button>
           </motion.form>
+        </motion.div>
+
+        {/* Phone Mockup */}
+        <motion.div
+          custom={3}
+          variants={fadeUp}
+          initial="hidden"
+          animate="visible"
+          className="mt-16 md:mt-24 flex justify-center"
+        >
+          <div className="relative w-[280px] md:w-[320px]">
+            {/* Phone frame */}
+            <div className="relative rounded-[3rem] border-[6px] border-[hsl(var(--muted-foreground)/0.3)] bg-black shadow-[0_0_60px_hsl(var(--foreground)/0.08)] overflow-hidden">
+              {/* Notch / Dynamic Island */}
+              <div className="absolute top-3 left-1/2 -translate-x-1/2 w-24 h-6 bg-black rounded-full z-20" />
+              {/* Screen area - replace the placeholder with your app screenshot */}
+              <div className="aspect-[9/19.5] w-full bg-background/50 flex items-center justify-center">
+                <span className="text-muted-foreground/40 text-xs font-mono tracking-wider">
+                  APP PREVIEW
+                </span>
+              </div>
+            </div>
+            {/* Subtle glow behind phone */}
+            <div className="absolute -inset-8 bg-[radial-gradient(ellipse_at_center,hsl(var(--foreground)/0.04),transparent_70%)] -z-10" />
+          </div>
         </motion.div>
       </main>
     </div>
