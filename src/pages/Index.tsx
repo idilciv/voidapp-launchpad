@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { toast } from "sonner";
 import earthHorizon from "@/assets/earth-horizon.jpg";
+import appScreenshot from "@/assets/app-screenshot.png";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -25,15 +26,15 @@ const Index = () => {
   };
 
   return (
-    <div className="relative min-h-[200vh] bg-background text-foreground font-sans overflow-x-hidden flex flex-col">
+    <div className="relative min-h-screen bg-background text-foreground font-sans overflow-hidden flex flex-col">
       {/* Earth horizon background */}
       <div className="absolute inset-0 z-0">
         <img
           src={earthHorizon}
           alt=""
-          className="absolute bottom-0 left-0 w-full h-auto object-cover object-top"
+          className="absolute bottom-0 left-0 w-full h-[55%] object-cover object-top"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-background via-background/80 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-b from-background via-background/70 to-transparent" />
       </div>
 
       {/* Nav */}
@@ -47,7 +48,7 @@ const Index = () => {
       </nav>
 
       {/* Hero */}
-      <main className="relative z-10 flex flex-col items-center max-w-3xl mx-auto px-6 md:px-12 pt-16 md:pt-24">
+      <main className="relative z-10 flex-1 flex flex-col items-center max-w-3xl mx-auto px-6 md:px-12 pt-4 md:pt-12">
         <motion.div
           initial="hidden"
           animate="visible"
@@ -95,22 +96,21 @@ const Index = () => {
           variants={fadeUp}
           initial="hidden"
           animate="visible"
-          className="mt-16 md:mt-24 flex justify-center"
+          className="mt-12 md:mt-20 flex justify-center"
         >
-          <div className="relative w-[280px] md:w-[320px]">
+          <div className="relative w-[260px] md:w-[300px]">
             {/* Phone frame */}
             <div className="relative rounded-[3rem] border-[6px] border-[hsl(var(--muted-foreground)/0.3)] bg-black shadow-[0_0_60px_hsl(var(--foreground)/0.08)] overflow-hidden">
-              {/* Notch / Dynamic Island */}
-              <div className="absolute top-3 left-1/2 -translate-x-1/2 w-24 h-6 bg-black rounded-full z-20" />
-              {/* Screen area - replace the placeholder with your app screenshot */}
-              <div className="aspect-[9/19.5] w-full bg-background/50 flex items-center justify-center">
-                <span className="text-muted-foreground/40 text-xs font-mono tracking-wider">
-                  APP PREVIEW
-                </span>
+              <div className="aspect-[9/19.5] w-full overflow-hidden">
+                <img
+                  src={appScreenshot}
+                  alt="Mistify app preview"
+                  className="w-full h-full object-cover object-top"
+                />
               </div>
             </div>
             {/* Subtle glow behind phone */}
-            <div className="absolute -inset-8 bg-[radial-gradient(ellipse_at_center,hsl(var(--foreground)/0.04),transparent_70%)] -z-10" />
+            <div className="absolute -inset-8 bg-[radial-gradient(ellipse_at_center,hsl(var(--foreground)/0.06),transparent_70%)] -z-10" />
           </div>
         </motion.div>
       </main>
