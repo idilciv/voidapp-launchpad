@@ -105,7 +105,7 @@ const Index = () => {
                 <img
                   src={appScreenshot}
                   alt="Mistify app preview"
-                  className="absolute inset-0 w-full h-full object-cover object-center"
+                  className="absolute -inset-1 w-[calc(100%+0.5rem)] h-[calc(100%+0.5rem)] object-cover object-center"
                 />
               </div>
             </div>
