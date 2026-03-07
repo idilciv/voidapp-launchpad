@@ -101,11 +101,11 @@ const Index = () => {
           <div className="relative w-[260px] md:w-[300px]">
             {/* Phone frame */}
             <div className="relative rounded-[3rem] border-[6px] border-[hsl(var(--muted-foreground)/0.3)] bg-black shadow-[0_0_60px_hsl(var(--foreground)/0.08)] overflow-hidden">
-              <div className="w-full overflow-hidden">
+              <div className="relative w-full aspect-[9/19.5] overflow-hidden">
                 <img
                   src={appScreenshot}
                   alt="Mistify app preview"
-                  className="w-full h-auto block"
+                  className="absolute inset-0 w-full h-full object-cover object-center"
                 />
               </div>
             </div>
