@@ -99,13 +99,25 @@ const Index = () => {
           className="mt-8 md:mt-16 flex justify-center w-full"
         >
           <div className="relative w-[440px] md:w-[540px]">
-            {/* Glow behind the hand - the hand emerges from this */}
+            {/* Main glow behind the hand */}
             <div
               className="absolute inset-0 z-0"
               style={{
                 background: "radial-gradient(ellipse 50% 50% at 50% 60%, rgba(100, 150, 220, 0.3) 0%, rgba(80, 130, 200, 0.15) 30%, rgba(60, 110, 180, 0.05) 55%, transparent 75%)",
                 filter: "blur(20px)",
                 transform: "scale(1.4)",
+              }}
+            />
+            {/* Extra glow on bottom-left, closer to the hand */}
+            <div
+              className="absolute z-0"
+              style={{
+                width: "60%",
+                height: "50%",
+                bottom: "15%",
+                left: "5%",
+                background: "radial-gradient(ellipse 70% 60% at 50% 55%, rgba(100, 150, 220, 0.3) 0%, rgba(80, 130, 200, 0.15) 35%, rgba(60, 110, 180, 0.05) 60%, transparent 80%)",
+                filter: "blur(18px)",
               }}
             />
             <img
