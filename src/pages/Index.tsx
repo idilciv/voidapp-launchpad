@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { toast } from "sonner";
 import earthHorizon from "@/assets/earth-horizon.jpg";
-import handWithApp from "@/assets/hand-with-app.png";
+import handWithApp from "@/assets/hand-with-app-black.png";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -90,15 +90,23 @@ const Index = () => {
           </motion.form>
         </motion.div>
 
-        {/* Phone Mockup */}
+        {/* Phone Mockup - rising from the horizon */}
         <motion.div
           custom={3}
           variants={fadeUp}
           initial="hidden"
           animate="visible"
-          className="mt-12 md:mt-20 flex justify-center"
+          className="mt-8 md:mt-16 flex justify-center w-full"
         >
-          <div className="relative w-[280px] md:w-[340px]">
+          <div
+            className="relative w-[320px] md:w-[400px]"
+            style={{
+              maskImage: 'linear-gradient(to bottom, transparent 0%, black 12%, black 88%, transparent 100%), linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%)',
+              maskComposite: 'intersect',
+              WebkitMaskImage: 'linear-gradient(to bottom, transparent 0%, black 12%, black 88%, transparent 100%), linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%)',
+              WebkitMaskComposite: 'source-in',
+            }}
+          >
             <img
               src={handWithApp}
               alt="Mistify app preview"
