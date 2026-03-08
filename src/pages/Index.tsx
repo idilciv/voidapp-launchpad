@@ -120,6 +120,14 @@ const Index = () => {
                 filter: "blur(15px)",
               }}
             />
+            {/* Edge glow matching the mask shape */}
+            <div
+              className="absolute inset-0 z-[5] pointer-events-none"
+              style={{
+                background: "radial-gradient(ellipse 75% 88% at 50% 48%, transparent 56%, rgba(100, 160, 240, 0.25) 62%, rgba(80, 140, 220, 0.12) 67%, transparent 73%)",
+                filter: "blur(8px)",
+              }}
+            />
             <img
               src={handWithApp}
               alt="Mistify app preview"
