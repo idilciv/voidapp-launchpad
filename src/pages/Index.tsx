@@ -4,8 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { toast } from "sonner";
 import earthHorizon from "@/assets/earth-horizon.jpg";
-import handWithApp from "@/assets/hand-with-app-black.png";
-import appScreenshot from "@/assets/app-screenshot.png";
+import handWithApp from "@/assets/phone-mockup.png";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -28,14 +27,14 @@ const Index = () => {
 
   return (
     <div className="relative min-h-screen bg-background text-foreground font-sans overflow-hidden flex flex-col">
-      {/* Earth horizon background */}
+      {/* Earth horizon background - at bottom, visible and prominent */}
       <div className="absolute inset-0 z-0">
         <img
           src={earthHorizon}
           alt=""
-          className="absolute bottom-0 left-0 w-full h-[55%] object-cover object-top"
+          className="absolute bottom-0 left-0 w-full h-[60%] object-cover object-bottom"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-background via-background/70 to-transparent" />
+        <div className="absolute inset-x-0 top-0 h-[50%] bg-gradient-to-b from-background to-transparent" />
       </div>
 
       {/* Nav */}
@@ -48,12 +47,13 @@ const Index = () => {
         </span>
       </nav>
 
-      {/* Hero */}
-      <main className="relative z-10 flex-1 flex flex-col items-center max-w-3xl mx-auto px-6 md:px-12 pt-4 md:pt-12">
+      {/* Hero Content */}
+      <main className="relative z-10 flex-1 flex flex-col items-center max-w-3xl mx-auto px-6 md:px-12 pt-4 md:pt-12 pb-0">
+        {/* Headline */}
         <motion.div
           initial="hidden"
           animate="visible"
-          className="text-center"
+          className="text-center mb-8 md:mb-12"
         >
           <motion.h1
             custom={0}
@@ -62,100 +62,44 @@ const Index = () => {
           >
             Attention is the most valuable asset in 21th century, protect it.
           </motion.h1>
-
-          <motion.p
-            custom={1}
-            variants={fadeUp}
-            className="text-muted-foreground text-base md:text-lg max-w-md mx-auto mb-10 leading-relaxed"
-          >
-            Void is a focus app that blocks distracting apps to help you reduce your screen time.
-          </motion.p>
-
-          <motion.form
-            custom={2}
-            variants={fadeUp}
-            onSubmit={handleSubmit}
-            className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto"
-          >
-            <Input
-              type="email"
-              placeholder="Your Email Address"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              className="h-12 bg-secondary border-border text-foreground placeholder:text-muted-foreground text-sm"
-              required
-            />
-            <Button type="submit" variant="glow" size="lg" className="h-12 px-8 font-semibold whitespace-nowrap">
-              Get Notified
-            </Button>
-          </motion.form>
         </motion.div>
 
-        {/* Phone Mockup - rising from the horizon */}
-        <motion.div
-          custom={3}
+        {/* Email Input Form */}
+        <motion.form
+          custom={1}
           variants={fadeUp}
           initial="hidden"
           animate="visible"
-          className="mt-8 md:mt-16 flex justify-center w-full"
+          onSubmit={handleSubmit}
+          className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto mb-8 md:mb-10"
         >
-          <div className="relative w-[500px] md:w-[620px]">
-            {/* Main glow behind the hand */}
-            <div
-              className="absolute inset-0 z-0"
-              style={{
-                background: "radial-gradient(ellipse 50% 50% at 50% 60%, rgba(100, 150, 220, 0.3) 0%, rgba(80, 130, 200, 0.15) 30%, rgba(60, 110, 180, 0.05) 55%, transparent 75%)",
-                filter: "blur(20px)",
-                transform: "scale(1.4)",
-              }}
-            />
-            {/* Extra glow on bottom-left, closer to the hand */}
-            <div
-              className="absolute z-0"
-              style={{
-                width: "45%",
-                height: "40%",
-                bottom: "10%",
-                left: "-8%",
-                background: "radial-gradient(ellipse 80% 70% at 60% 50%, rgba(100, 150, 220, 0.35) 0%, rgba(80, 130, 200, 0.18) 30%, rgba(60, 110, 180, 0.06) 55%, transparent 80%)",
-                filter: "blur(15px)",
-              }}
-            />
-            {/* Edge glow matching the mask shape */}
-            <div
-              className="absolute inset-0 z-[5] pointer-events-none"
-              style={{
-                background: "radial-gradient(ellipse 68% 80% at 50% 55%, transparent 50%, rgba(100, 160, 240, 0.15) 58%, rgba(80, 140, 220, 0.07) 65%, transparent 73%)",
-                filter: "blur(10px)",
-              }}
-            />
-            {/* App screenshot overlay on phone screen */}
-            <img
-              src={appScreenshot}
-              alt="Void app screen"
-              className="absolute z-[15] pointer-events-none"
-              style={{
-                top: "18%",
-                left: "33%",
-                width: "24%",
-                borderRadius: "8px",
-                maskImage: "radial-gradient(ellipse 65% 78% at 50% 55%, black 52%, transparent 66%)",
-                WebkitMaskImage: "radial-gradient(ellipse 65% 78% at 50% 55%, black 52%, transparent 66%)",
-              }}
-            />
-            <img
-              src={handWithApp}
-              alt="Void app preview"
-              className="relative z-10 w-full h-auto block"
-              style={{
-                maskImage: "radial-gradient(ellipse 65% 78% at 50% 55%, black 52%, transparent 66%)",
-                WebkitMaskImage: "radial-gradient(ellipse 65% 78% at 50% 55%, black 52%, transparent 66%)",
-                filter: "brightness(1.15) contrast(1.1)",
-              }}
-            />
-          </div>
-        </motion.div>
+          <Input
+            type="email"
+            placeholder="Your Email Address"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            className="h-12 bg-secondary border-border text-foreground placeholder:text-muted-foreground text-sm"
+            required
+          />
+          <Button type="submit" variant="glow" size="lg" className="h-12 px-8 font-semibold whitespace-nowrap">
+            Get Notified
+          </Button>
+        </motion.form>
 
+        {/* Phone Mockup - large and dominant, overlapping earth horizon */}
+        <motion.div
+          custom={2}
+          variants={fadeUp}
+          initial="hidden"
+          animate="visible"
+          className="flex justify-center w-full mt-auto -mb-8 md:-mb-12"
+        >
+          <img
+            src={handWithApp}
+            alt="Void app preview"
+            className="w-[1200px] max-w-[90vw] h-auto mx-auto block relative z-20"
+          />
+        </motion.div>
       </main>
     </div>
   );
