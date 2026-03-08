@@ -98,11 +98,17 @@ const Index = () => {
           animate="visible"
           className="mt-8 md:mt-16 flex justify-center w-full"
         >
-          <div className="relative w-[320px] md:w-[400px]">
+          <div
+            className="relative w-[320px] md:w-[400px]"
+            style={{
+              maskImage: 'radial-gradient(ellipse 70% 60% at 50% 50%, black 40%, transparent 100%)',
+              WebkitMaskImage: 'radial-gradient(ellipse 70% 60% at 50% 50%, black 40%, transparent 100%)',
+            }}
+          >
             <img
               src={handWithApp}
               alt="Mistify app preview"
-              className="w-full h-auto block mix-blend-screen"
+              className="w-full h-auto block"
             />
           </div>
         </motion.div>
