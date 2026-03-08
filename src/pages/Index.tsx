@@ -124,8 +124,8 @@ const Index = () => {
             <div
               className="absolute inset-0 z-[5] pointer-events-none"
               style={{
-                background: "radial-gradient(ellipse 75% 88% at 50% 48%, transparent 56%, rgba(100, 160, 240, 0.25) 62%, rgba(80, 140, 220, 0.12) 67%, transparent 73%)",
-                filter: "blur(8px)",
+                background: "radial-gradient(ellipse 68% 80% at 50% 48%, transparent 50%, rgba(100, 160, 240, 0.3) 58%, rgba(80, 140, 220, 0.15) 65%, transparent 73%)",
+                filter: "blur(10px)",
               }}
             />
             <img
@@ -133,8 +133,8 @@ const Index = () => {
               alt="Mistify app preview"
               className="relative z-10 w-full h-auto block"
               style={{
-                maskImage: "radial-gradient(ellipse 75% 88% at 50% 48%, black 58%, transparent 72%)",
-                WebkitMaskImage: "radial-gradient(ellipse 75% 88% at 50% 48%, black 58%, transparent 72%)",
+                maskImage: "radial-gradient(ellipse 65% 78% at 50% 48%, black 52%, transparent 66%)",
+                WebkitMaskImage: "radial-gradient(ellipse 65% 78% at 50% 48%, black 52%, transparent 66%)",
                 filter: "brightness(1.15) contrast(1.1)",
               }}
             />
