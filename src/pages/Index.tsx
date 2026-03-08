@@ -99,11 +99,11 @@ const Index = () => {
           className="mt-8 md:mt-16 flex justify-center w-full"
         >
           <div
-            className="relative w-[380px] md:w-[480px]"
+            className="relative w-[420px] md:w-[520px]"
             style={{
-              maskImage: "radial-gradient(ellipse 56% 72% at 50% 54%, black 58%, transparent 68%)",
-              WebkitMaskImage: "radial-gradient(ellipse 56% 72% at 50% 54%, black 58%, transparent 68%)",
-              filter: "brightness(1.1) contrast(1.05)",
+              maskImage: "radial-gradient(ellipse 60% 76% at 50% 54%, black 64%, transparent 66%)",
+              WebkitMaskImage: "radial-gradient(ellipse 60% 76% at 50% 54%, black 64%, transparent 66%)",
+              filter: "brightness(1.15) contrast(1.1)",
             }}
           >
             <img
