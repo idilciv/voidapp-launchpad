@@ -99,17 +99,20 @@ const Index = () => {
           className="mt-8 md:mt-16 flex justify-center w-full"
         >
           <div
-            className="relative w-[420px] md:w-[520px]"
+            className="relative w-[440px] md:w-[540px]"
             style={{
-              maskImage: "radial-gradient(ellipse 60% 76% at 50% 54%, black 64%, transparent 66%)",
-              WebkitMaskImage: "radial-gradient(ellipse 60% 76% at 50% 54%, black 64%, transparent 66%)",
-              filter: "brightness(1.15) contrast(1.1)",
+              filter: "drop-shadow(0 0 30px rgba(120, 160, 220, 0.25)) drop-shadow(0 0 60px rgba(80, 130, 200, 0.15)) drop-shadow(0 0 100px rgba(60, 110, 180, 0.1))",
             }}
           >
             <img
               src={handWithApp}
               alt="Mistify app preview"
               className="w-full h-auto block"
+              style={{
+                maskImage: "radial-gradient(ellipse 58% 74% at 50% 54%, black 60%, transparent 68%)",
+                WebkitMaskImage: "radial-gradient(ellipse 58% 74% at 50% 54%, black 60%, transparent 68%)",
+                filter: "brightness(1.15) contrast(1.1)",
+              }}
             />
           </div>
         </motion.div>
