@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { toast } from "sonner";
 import earthHorizon from "@/assets/earth-horizon.jpg";
-
+import handWithApp from "@/assets/hand-with-app.png";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -88,6 +88,23 @@ const Index = () => {
               Get Notified
             </Button>
           </motion.form>
+        </motion.div>
+
+        {/* Phone Mockup */}
+        <motion.div
+          custom={3}
+          variants={fadeUp}
+          initial="hidden"
+          animate="visible"
+          className="mt-12 md:mt-20 flex justify-center"
+        >
+          <div className="relative w-[280px] md:w-[340px]">
+            <img
+              src={handWithApp}
+              alt="Mistify app preview"
+              className="w-full h-auto block"
+            />
+          </div>
         </motion.div>
 
       </main>
