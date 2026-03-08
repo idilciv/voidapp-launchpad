@@ -18,7 +18,6 @@ const fadeUp = {
 
 const Index = () => {
   const [email, setEmail] = useState("");
-
   const [loading, setLoading] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -40,46 +39,45 @@ const Index = () => {
   };
 
   return (
-    <div className="relative min-h-screen bg-background text-foreground font-sans overflow-hidden flex flex-col">
-      {/* Earth horizon background - at bottom, visible and prominent */}
+    <div className="relative min-h-screen min-h-[100dvh] bg-background text-foreground font-sans overflow-hidden flex flex-col">
+      {/* Earth horizon background */}
       <div className="absolute inset-0 z-0">
         <img
           src={earthHorizon}
           alt=""
-          className="absolute bottom-0 left-0 w-full h-[60%] object-cover object-bottom"
+          className="absolute bottom-0 left-0 w-full h-[50%] sm:h-[60%] object-cover object-bottom"
         />
         <div className="absolute inset-x-0 top-0 h-[50%] bg-gradient-to-b from-background to-transparent" />
       </div>
 
       {/* Nav */}
-      <nav className="relative z-10 flex items-center justify-between px-6 md:px-12 py-6 max-w-6xl mx-auto w-full">
-        <span className="text-lg font-semibold tracking-tight text-foreground">
+      <nav className="relative z-10 flex items-center justify-between px-4 sm:px-6 md:px-12 py-4 sm:py-6 max-w-6xl mx-auto w-full">
+        <span className="text-base sm:text-lg font-semibold tracking-tight text-foreground">
           Void
         </span>
-        <span className="text-xs font-mono text-muted-foreground tracking-widest uppercase">
+        <span className="text-[10px] sm:text-xs font-mono text-muted-foreground tracking-widest uppercase">
           Coming Soon
         </span>
       </nav>
 
       {/* Hero Content */}
-      <main className="relative z-10 flex-1 flex flex-col items-center max-w-3xl mx-auto px-6 md:px-12 pt-4 md:pt-12 pb-0">
-        {/* Headline */}
+      <main className="relative z-10 flex-1 flex flex-col items-center max-w-3xl mx-auto px-4 sm:px-6 md:px-12 pt-2 sm:pt-4 md:pt-12 pb-0">
         <motion.div
           initial="hidden"
           animate="visible"
-          className="text-center mb-8 md:mb-12"
+          className="text-center mb-6 sm:mb-8 md:mb-12"
         >
           <motion.h1
             custom={0}
             variants={fadeUp}
-            className="text-3xl md:text-5xl lg:text-[3.5rem] font-semibold tracking-tight leading-[1.15] mb-4 text-foreground"
+            className="text-2xl sm:text-3xl md:text-5xl lg:text-[3.5rem] font-semibold tracking-tight leading-[1.15] mb-3 sm:mb-4 text-foreground"
           >
             Attention is the most valuable asset in 21st century, protect it.
           </motion.h1>
           <motion.p
             custom={1}
             variants={fadeUp}
-            className="text-lg md:text-xl text-muted-foreground"
+            className="text-base sm:text-lg md:text-xl text-muted-foreground px-2 sm:px-0"
           >
             Void is a focus app that blocks distracting apps to help you reduce your screen time.
           </motion.p>
@@ -92,33 +90,33 @@ const Index = () => {
           initial="hidden"
           animate="visible"
           onSubmit={handleSubmit}
-          className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto mb-8 md:mb-10"
+          className="flex flex-col sm:flex-row gap-2 sm:gap-3 w-full max-w-sm sm:max-w-md mx-auto mb-6 sm:mb-8 md:mb-10 px-2 sm:px-0"
         >
           <Input
             type="email"
             placeholder="Your Email Address"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            className="h-12 bg-secondary border-border text-foreground placeholder:text-muted-foreground text-sm"
+            className="h-11 sm:h-12 bg-secondary border-border text-foreground placeholder:text-muted-foreground text-sm"
             required
           />
-          <Button type="submit" variant="glow" size="lg" className="h-12 px-8 font-semibold whitespace-nowrap" disabled={loading}>
+          <Button type="submit" variant="glow" size="lg" className="h-11 sm:h-12 px-6 sm:px-8 font-semibold whitespace-nowrap text-sm sm:text-base" disabled={loading}>
             {loading ? "Joining..." : "Get Notified"}
           </Button>
         </motion.form>
 
-        {/* Phone Mockup - large and dominant, overlapping earth horizon */}
+        {/* Phone Mockup */}
         <motion.div
           custom={3}
           variants={fadeUp}
           initial="hidden"
           animate="visible"
-          className="flex justify-center w-full mt-auto -mb-8 md:-mb-12"
+          className="flex justify-center w-full mt-auto -mb-4 sm:-mb-8 md:-mb-12"
         >
           <img
             src={handWithApp}
             alt="Void app preview"
-            className="w-[1200px] max-w-[90vw] h-auto mx-auto block relative z-20"
+            className="w-[90vw] sm:w-[80vw] md:w-[1200px] md:max-w-[90vw] h-auto mx-auto block relative z-20"
           />
         </motion.div>
       </main>
