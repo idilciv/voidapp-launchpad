@@ -5,6 +5,7 @@ import { Input } from "@/components/ui/input";
 import { toast } from "sonner";
 import earthHorizon from "@/assets/earth-horizon.jpg";
 import handWithApp from "@/assets/hand-with-app-black.png";
+import appScreenshot from "@/assets/app-screenshot.png";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -126,6 +127,20 @@ const Index = () => {
               style={{
                 background: "radial-gradient(ellipse 68% 80% at 50% 55%, transparent 50%, rgba(100, 160, 240, 0.15) 58%, rgba(80, 140, 220, 0.07) 65%, transparent 73%)",
                 filter: "blur(10px)",
+              }}
+            />
+            {/* App screenshot overlay on phone screen */}
+            <img
+              src={appScreenshot}
+              alt="Void app screen"
+              className="absolute z-[15] pointer-events-none"
+              style={{
+                top: "18%",
+                left: "33%",
+                width: "24%",
+                borderRadius: "8px",
+                maskImage: "radial-gradient(ellipse 65% 78% at 50% 55%, black 52%, transparent 66%)",
+                WebkitMaskImage: "radial-gradient(ellipse 65% 78% at 50% 55%, black 52%, transparent 66%)",
               }}
             />
             <img
