@@ -19,9 +19,22 @@ const fadeUp = {
 const Index = () => {
   const [email, setEmail] = useState("");
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [loading, setLoading] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!email) return;
+    if (!email || loading) return;
+    setLoading(true);
+    const { error } = await supabase.from("waitlist").insert({ email });
+    setLoading(false);
+    if (error) {
+      if (error.code === "23505") {
+        toast.info("You're already on the list!");
+      } else {
+        toast.error("Something went wrong. Please try again.");
+      }
+      return;
+    }
     toast.success("You're on the list! We'll be in touch.");
     setEmail("");
   };
