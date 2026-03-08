@@ -87,7 +87,7 @@ const Index = () => {
 
         {/* Email Input Form */}
         <motion.form
-          custom={1}
+          custom={2}
           variants={fadeUp}
           initial="hidden"
           animate="visible"
