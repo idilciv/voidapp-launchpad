@@ -112,13 +112,14 @@ const Index = () => {
             <div
               className="absolute z-0"
               style={{
-                width: "40%",
-                height: "35%",
-                bottom: "20%",
-                left: "-5%",
-                background: "radial-gradient(ellipse 70% 60% at 50% 55%, rgba(100, 150, 220, 0.10) 0%, rgba(80, 130, 200, 0.05) 35%, rgba(60, 110, 180, 0.02) 60%, transparent 80%)",
-                filter: "blur(18px)",
+                width: "45%",
+                height: "40%",
+                bottom: "10%",
+                left: "-8%",
+                background: "radial-gradient(ellipse 80% 70% at 60% 50%, rgba(100, 150, 220, 0.35) 0%, rgba(80, 130, 200, 0.18) 30%, rgba(60, 110, 180, 0.06) 55%, transparent 80%)",
+                filter: "blur(15px)",
               }}
+            />
             />
             <img
               src={handWithApp}
