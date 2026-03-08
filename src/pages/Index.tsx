@@ -116,7 +116,7 @@ const Index = () => {
           <img
             src={handWithApp}
             alt="Void app preview"
-            className="w-[90vw] sm:w-[80vw] md:w-[1200px] md:max-w-[90vw] h-auto mx-auto block relative z-20"
+            className="w-[110vw] sm:w-[90vw] md:w-[1200px] md:max-w-[90vw] h-auto mx-auto block relative z-20"
           />
         </motion.div>
       </main>
