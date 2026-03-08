@@ -111,12 +111,12 @@ const Index = () => {
           variants={fadeUp}
           initial="hidden"
           animate="visible"
-          className="flex justify-center w-full mt-auto -mb-4 sm:-mb-8 md:-mb-12"
+          className="flex justify-center w-full mt-2 sm:mt-auto -mb-8 sm:-mb-8 md:-mb-12"
         >
           <img
             src={handWithApp}
             alt="Void app preview"
-            className="w-[110vw] sm:w-[90vw] md:w-[1200px] md:max-w-[90vw] h-auto mx-auto block relative z-20"
+            className="w-[160vw] sm:w-[90vw] md:w-[1200px] md:max-w-[90vw] h-auto mx-auto block relative z-20"
           />
         </motion.div>
       </main>
