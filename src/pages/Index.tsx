@@ -90,15 +90,15 @@ const Index = () => {
           </motion.form>
         </motion.div>
 
-        {/* Phone Mockup */}
+        {/* Phone Mockup - rising from the horizon */}
         <motion.div
           custom={3}
           variants={fadeUp}
           initial="hidden"
           animate="visible"
-          className="mt-12 md:mt-20 flex justify-center"
+          className="mt-8 md:mt-16 flex justify-center w-full"
         >
-          <div className="relative w-[280px] md:w-[340px]">
+          <div className="relative w-[320px] md:w-[400px]">
             <img
               src={handWithApp}
               alt="Mistify app preview"
