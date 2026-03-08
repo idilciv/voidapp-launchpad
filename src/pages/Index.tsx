@@ -120,7 +120,6 @@ const Index = () => {
                 filter: "blur(15px)",
               }}
             />
-            />
             <img
               src={handWithApp}
               alt="Mistify app preview"
