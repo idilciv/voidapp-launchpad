@@ -5,6 +5,7 @@ import { Input } from "@/components/ui/input";
 import { toast } from "sonner";
 import earthHorizon from "@/assets/earth-horizon.jpg";
 import handWithApp from "@/assets/hand-with-app-black.png";
+import appScreen from "@/assets/new-app-screen.png";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
