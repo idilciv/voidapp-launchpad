@@ -109,7 +109,7 @@ const Index = () => {
 
         {/* Phone Mockup - large and dominant, overlapping earth horizon */}
         <motion.div
-          custom={2}
+          custom={3}
           variants={fadeUp}
           initial="hidden"
           animate="visible"
