@@ -101,8 +101,8 @@ const Index = () => {
           <div
             className="relative w-[320px] md:w-[400px]"
             style={{
-              maskImage: 'radial-gradient(ellipse 70% 60% at 50% 50%, black 40%, transparent 100%)',
-              WebkitMaskImage: 'radial-gradient(ellipse 70% 60% at 50% 50%, black 40%, transparent 100%)',
+              maskImage: 'radial-gradient(ellipse 80% 70% at 50% 45%, black 50%, transparent 100%)',
+              WebkitMaskImage: 'radial-gradient(ellipse 80% 70% at 50% 45%, black 50%, transparent 100%)',
             }}
           >
             <img
