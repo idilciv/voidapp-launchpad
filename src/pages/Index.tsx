@@ -112,11 +112,11 @@ const Index = () => {
             <div
               className="absolute z-0"
               style={{
-                width: "60%",
-                height: "50%",
-                bottom: "15%",
-                left: "5%",
-                background: "radial-gradient(ellipse 70% 60% at 50% 55%, rgba(100, 150, 220, 0.15) 0%, rgba(80, 130, 200, 0.08) 35%, rgba(60, 110, 180, 0.03) 60%, transparent 80%)",
+                width: "40%",
+                height: "35%",
+                bottom: "20%",
+                left: "-5%",
+                background: "radial-gradient(ellipse 70% 60% at 50% 55%, rgba(100, 150, 220, 0.10) 0%, rgba(80, 130, 200, 0.05) 35%, rgba(60, 110, 180, 0.02) 60%, transparent 80%)",
                 filter: "blur(18px)",
               }}
             />
