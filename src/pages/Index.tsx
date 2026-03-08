@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { toast } from "sonner";
+import { supabase } from "@/integrations/supabase/client";
 import earthHorizon from "@/assets/earth-horizon.jpg";
 import handWithApp from "@/assets/phone-mockup.png";
 
@@ -18,9 +19,22 @@ const fadeUp = {
 const Index = () => {
   const [email, setEmail] = useState("");
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [loading, setLoading] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!email) return;
+    if (!email || loading) return;
+    setLoading(true);
+    const { error } = await supabase.from("waitlist").insert({ email });
+    setLoading(false);
+    if (error) {
+      if (error.code === "23505") {
+        toast.info("You're already on the list!");
+      } else {
+        toast.error("Something went wrong. Please try again.");
+      }
+      return;
+    }
     toast.success("You're on the list! We'll be in touch.");
     setEmail("");
   };
@@ -81,8 +95,8 @@ const Index = () => {
             className="h-12 bg-secondary border-border text-foreground placeholder:text-muted-foreground text-sm"
             required
           />
-          <Button type="submit" variant="glow" size="lg" className="h-12 px-8 font-semibold whitespace-nowrap">
-            Get Notified
+          <Button type="submit" variant="glow" size="lg" className="h-12 px-8 font-semibold whitespace-nowrap" disabled={loading}>
+            {loading ? "Joining..." : "Get Notified"}
           </Button>
         </motion.form>
 
