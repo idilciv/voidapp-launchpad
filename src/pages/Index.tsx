@@ -98,10 +98,7 @@ const Index = () => {
           animate="visible"
           className="mt-8 md:mt-16 flex justify-center w-full"
         >
-          <div
-            className="relative w-[420px] md:w-[520px]"
-            }}
-          >
+          <div className="relative w-[420px] md:w-[520px]">
             <img
               src={handWithApp}
               alt="Mistify app preview"
