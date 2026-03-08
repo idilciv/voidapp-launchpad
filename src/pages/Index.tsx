@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { toast } from "sonner";
 import earthHorizon from "@/assets/earth-horizon.jpg";
-import handWithApp from "@/assets/hand-with-app-black.png";
+import handWithApp from "@/assets/hand-with-app-cutout.png";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -98,14 +98,7 @@ const Index = () => {
           animate="visible"
           className="mt-8 md:mt-16 flex justify-center w-full"
         >
-          <div
-            className="relative w-[420px] md:w-[520px]"
-            style={{
-              maskImage: "radial-gradient(ellipse 60% 76% at 50% 54%, black 64%, transparent 66%)",
-              WebkitMaskImage: "radial-gradient(ellipse 60% 76% at 50% 54%, black 64%, transparent 66%)",
-              filter: "brightness(1.15) contrast(1.1)",
-            }}
-          >
+          <div className="relative w-[420px] md:w-[520px]">
             <img
               src={handWithApp}
               alt="Mistify app preview"
