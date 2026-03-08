@@ -98,7 +98,7 @@ const Index = () => {
           animate="visible"
           className="mt-8 md:mt-16 flex justify-center w-full"
         >
-          <div className="relative w-[440px] md:w-[540px]">
+          <div className="relative w-[460px] md:w-[560px]">
             {/* Main glow behind the hand */}
             <div
               className="absolute inset-0 z-0"
