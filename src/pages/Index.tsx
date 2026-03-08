@@ -129,6 +129,20 @@ const Index = () => {
                 filter: "blur(10px)",
               }}
             />
+            {/* App screenshot overlay on phone screen */}
+            <img
+              src={appScreenshot}
+              alt="Void app screen"
+              className="absolute z-[15] pointer-events-none"
+              style={{
+                top: "18%",
+                left: "33%",
+                width: "24%",
+                borderRadius: "8px",
+                maskImage: "radial-gradient(ellipse 65% 78% at 50% 55%, black 52%, transparent 66%)",
+                WebkitMaskImage: "radial-gradient(ellipse 65% 78% at 50% 55%, black 52%, transparent 66%)",
+              }}
+            />
             <img
               src={handWithApp}
               alt="Void app preview"
