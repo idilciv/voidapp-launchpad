@@ -139,6 +139,22 @@ const Index = () => {
                 filter: "brightness(1.15) contrast(1.1)",
               }}
             />
+            {/* User's actual app screenshot overlaid on phone screen */}
+            <img
+              src={appScreen}
+              alt="App screen"
+              className="absolute z-[11] pointer-events-none"
+              style={{
+                top: "8.5%",
+                left: "27%",
+                width: "46%",
+                height: "76%",
+                objectFit: "cover",
+                borderRadius: "1.8rem",
+                maskImage: "radial-gradient(ellipse 65% 78% at 50% 55%, black 52%, transparent 66%)",
+                WebkitMaskImage: "radial-gradient(ellipse 65% 78% at 50% 55%, black 52%, transparent 66%)",
+              }}
+            />
           </div>
         </motion.div>
 
