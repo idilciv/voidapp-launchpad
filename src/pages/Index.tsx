@@ -103,6 +103,7 @@ const Index = () => {
             style={{
               maskImage: "radial-gradient(ellipse 52% 68% at 50% 54%, black 52%, transparent 72%)",
               WebkitMaskImage: "radial-gradient(ellipse 52% 68% at 50% 54%, black 52%, transparent 72%)",
+              filter: "brightness(1.15) contrast(1.1)",
             }}
           >
             <img
