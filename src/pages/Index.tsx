@@ -95,8 +95,8 @@ const Index = () => {
             className="h-12 bg-secondary border-border text-foreground placeholder:text-muted-foreground text-sm"
             required
           />
-          <Button type="submit" variant="glow" size="lg" className="h-12 px-8 font-semibold whitespace-nowrap">
-            Get Notified
+          <Button type="submit" variant="glow" size="lg" className="h-12 px-8 font-semibold whitespace-nowrap" disabled={loading}>
+            {loading ? "Joining..." : "Get Notified"}
           </Button>
         </motion.form>
 
