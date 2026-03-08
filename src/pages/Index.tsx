@@ -99,15 +99,10 @@ const Index = () => {
           className="mt-8 md:mt-16 flex justify-center w-full"
         >
           <div className="relative w-[430px] md:w-[540px]">
-            <div className="absolute inset-x-10 -bottom-2 h-24 bg-gradient-to-t from-background via-background/70 to-transparent blur-2xl" />
             <img
               src={handWithApp}
               alt="Mistify app preview"
-              className="relative w-full h-auto block"
-              style={{
-                mixBlendMode: "lighten",
-                filter: "brightness(1.12) contrast(1.08) saturate(1.05)",
-              }}
+              className="w-full h-auto block"
             />
           </div>
         </motion.div>
