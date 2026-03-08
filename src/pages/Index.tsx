@@ -40,7 +40,7 @@ const Index = () => {
       {/* Nav */}
       <nav className="relative z-10 flex items-center justify-between px-6 md:px-12 py-6 max-w-6xl mx-auto w-full">
         <span className="text-lg font-semibold tracking-tight text-foreground">
-          Mistify
+          Void
         </span>
         <span className="text-xs font-mono text-muted-foreground tracking-widest uppercase">
           Coming Soon
@@ -67,7 +67,7 @@ const Index = () => {
             variants={fadeUp}
             className="text-muted-foreground text-base md:text-lg max-w-md mx-auto mb-10 leading-relaxed"
           >
-            Mistify is a focus app that blocks distracting apps to help you reduce your screen time.
+            Void is a focus app that blocks distracting apps to help you reduce your screen time.
           </motion.p>
 
           <motion.form
@@ -130,7 +130,7 @@ const Index = () => {
             />
             <img
               src={handWithApp}
-              alt="Mistify app preview"
+              alt="Void app preview"
               className="relative z-10 w-full h-auto block"
               style={{
                 maskImage: "radial-gradient(ellipse 65% 78% at 50% 55%, black 52%, transparent 66%)",
