@@ -98,7 +98,7 @@ const Index = () => {
           animate="visible"
           className="mt-8 md:mt-16 flex justify-center w-full"
         >
-          <div className="relative w-[460px] md:w-[560px]">
+          <div className="relative w-[500px] md:w-[620px]">
             {/* Main glow behind the hand */}
             <div
               className="absolute inset-0 z-0"
@@ -125,8 +125,8 @@ const Index = () => {
               alt="Mistify app preview"
               className="relative z-10 w-full h-auto block"
               style={{
-                maskImage: "radial-gradient(ellipse 58% 70% at 55% 50%, black 55%, transparent 65%)",
-                WebkitMaskImage: "radial-gradient(ellipse 58% 70% at 55% 50%, black 55%, transparent 65%)",
+                maskImage: "radial-gradient(ellipse 62% 72% at 53% 52%, black 58%, transparent 68%)",
+                WebkitMaskImage: "radial-gradient(ellipse 62% 72% at 53% 52%, black 58%, transparent 68%)",
                 filter: "brightness(1.15) contrast(1.1)",
               }}
             />
