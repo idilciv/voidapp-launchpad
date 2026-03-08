@@ -116,7 +116,7 @@ const Index = () => {
                 height: "50%",
                 bottom: "15%",
                 left: "5%",
-                background: "radial-gradient(ellipse 70% 60% at 50% 55%, rgba(100, 150, 220, 0.3) 0%, rgba(80, 130, 200, 0.15) 35%, rgba(60, 110, 180, 0.05) 60%, transparent 80%)",
+                background: "radial-gradient(ellipse 70% 60% at 50% 55%, rgba(100, 150, 220, 0.15) 0%, rgba(80, 130, 200, 0.08) 35%, rgba(60, 110, 180, 0.03) 60%, transparent 80%)",
                 filter: "blur(18px)",
               }}
             />
