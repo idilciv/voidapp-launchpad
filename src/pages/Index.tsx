@@ -133,8 +133,8 @@ const Index = () => {
               alt="Mistify app preview"
               className="relative z-10 w-full h-auto block"
               style={{
-                maskImage: "radial-gradient(ellipse 65% 78% at 50% 48%, black 52%, transparent 66%)",
-                WebkitMaskImage: "radial-gradient(ellipse 65% 78% at 50% 48%, black 52%, transparent 66%)",
+                maskImage: "radial-gradient(ellipse 65% 78% at 50% 55%, black 52%, transparent 66%)",
+                WebkitMaskImage: "radial-gradient(ellipse 65% 78% at 50% 55%, black 52%, transparent 66%)",
                 filter: "brightness(1.15) contrast(1.1)",
               }}
             />
