@@ -145,13 +145,13 @@ const Index = () => {
               alt="App screen"
               className="absolute z-[11] pointer-events-none"
               style={{
-                top: "5%",
-                left: "28.5%",
-                width: "43%",
-                height: "80%",
+                top: "4%",
+                left: "26%",
+                width: "48%",
+                height: "82%",
                 objectFit: "cover",
                 objectPosition: "top",
-                borderRadius: "2rem",
+                borderRadius: "2.2rem",
                 maskImage: "radial-gradient(ellipse 65% 78% at 50% 55%, black 52%, transparent 66%)",
                 WebkitMaskImage: "radial-gradient(ellipse 65% 78% at 50% 55%, black 52%, transparent 66%)",
               }}
