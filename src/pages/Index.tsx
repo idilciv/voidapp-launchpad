@@ -67,7 +67,7 @@ const Index = () => {
             variants={fadeUp}
             className="text-muted-foreground text-base md:text-lg max-w-md mx-auto mb-10 leading-relaxed"
           >
-            Mistify is a focus app that blocks distracting apps to help you reduce your screen time.
+            Void is a focus app that blocks distracting apps to help you reduce your screen time.
           </motion.p>
 
           <motion.form
