@@ -40,7 +40,7 @@ const Index = () => {
       {/* Nav */}
       <nav className="relative z-10 flex items-center justify-between px-6 md:px-12 py-6 max-w-6xl mx-auto w-full">
         <span className="text-lg font-semibold tracking-tight text-foreground">
-          Mistify
+          Void
         </span>
         <span className="text-xs font-mono text-muted-foreground tracking-widest uppercase">
           Coming Soon
