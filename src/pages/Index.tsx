@@ -102,7 +102,7 @@ const Index = () => {
             <img
               src={handWithApp}
               alt="Mistify app preview"
-              className="w-full h-auto block"
+              className="w-full h-auto block mix-blend-lighten"
             />
           </div>
         </motion.div>
