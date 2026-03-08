@@ -72,15 +72,22 @@ const Index = () => {
           <motion.h1
             custom={0}
             variants={fadeUp}
-            className="text-3xl md:text-5xl lg:text-[3.5rem] font-semibold tracking-tight leading-[1.15] mb-6 text-foreground"
+            className="text-3xl md:text-5xl lg:text-[3.5rem] font-semibold tracking-tight leading-[1.15] mb-4 text-foreground"
           >
-            Attention is the most valuable asset in 21th century, protect it.
+            Void is a focus app that blocks distracting apps to help you reduce your screen time.
           </motion.h1>
+          <motion.p
+            custom={1}
+            variants={fadeUp}
+            className="text-lg md:text-xl text-muted-foreground"
+          >
+            Attention is the most valuable asset in 21st century, protect it.
+          </motion.p>
         </motion.div>
 
         {/* Email Input Form */}
         <motion.form
-          custom={1}
+          custom={2}
           variants={fadeUp}
           initial="hidden"
           animate="visible"
@@ -102,7 +109,7 @@ const Index = () => {
 
         {/* Phone Mockup - large and dominant, overlapping earth horizon */}
         <motion.div
-          custom={2}
+          custom={3}
           variants={fadeUp}
           initial="hidden"
           animate="visible"
