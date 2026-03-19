@@ -1,31 +1,189 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Void — Reclaim Your Attention</title>
-    <meta name="description" content="Void blocks distracting apps to help you reduce your screen time. Join the waitlist.">
-    <meta name="author" content="Void" />
-
-    
-    
-    <meta property="og:type" content="website" />
-    <meta property="og:image" content="https://storage.googleapis.com/gpt-engineer-file-uploads/KVnB7WS1yaW67UfWp4GJHnBuVdB3/social-images/social-1772966784098-Refined_VOID_Logo_with_Ethereal_Circle-2.webp">
-
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:image" content="https://storage.googleapis.com/gpt-engineer-file-uploads/KVnB7WS1yaW67UfWp4GJHnBuVdB3/social-images/social-1772966784098-Refined_VOID_Logo_with_Ethereal_Circle-2.webp">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-    <meta property="og:title" content="Void — Reclaim Your Attention">
-  <meta name="twitter:title" content="Void — Reclaim Your Attention">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Void — Reclaim Your Attention</title>
+  <meta name="description" content="Void blocks distracting apps to help you reduce your screen time. Join the waitlist.">
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Void — Reclaim Your Attention">
   <meta property="og:description" content="Void blocks distracting apps to help you reduce your screen time. Join the waitlist.">
-  <meta name="twitter:description" content="Void blocks distracting apps to help you reduce your screen time. Join the waitlist.">
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta property="og:image" content="https://storage.googleapis.com/gpt-engineer-file-uploads/KVnB7WS1yaW67UfWp4GJHnBuVdB3/social-images/social-1772966784098-Refined_VOID_Logo_with_Ethereal_Circle-2.webp">
+  <meta name="twitter:image" content="https://storage.googleapis.com/gpt-engineer-file-uploads/KVnB7WS1yaW67UfWp4GJHnBuVdB3/social-images/social-1772966784098-Refined_VOID_Logo_with_Ethereal_Circle-2.webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --background: #080808;
+      --foreground: #e6e6e6;
+      --muted: #505050;
+      --border: #262626;
+      --secondary: #1a1a1a;
+      --radius: 0.5rem;
+    }
+    html, body {
+      height: 100%;
+      background: var(--background);
+      color: var(--foreground);
+      font-family: 'Inter', system-ui, sans-serif;
+      overflow-x: hidden;
+    }
+    .page {
+      position: relative;
+      min-height: 100dvh;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+    .bg-earth { position: absolute; inset: 0; z-index: 0; }
+    .bg-earth img {
+      position: absolute;
+      bottom: 0; left: 0;
+      width: 100%; height: 60%;
+      object-fit: cover; object-position: bottom;
+    }
+    .bg-fade {
+      position: absolute;
+      inset-inline: 0; top: 0; height: 50%;
+      background: linear-gradient(to bottom, var(--background), transparent);
+    }
+    nav {
+      position: relative; z-index: 10;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1.5rem 3rem;
+      max-width: 72rem; margin: 0 auto; width: 100%;
+    }
+    .nav-logo { font-size: 1.125rem; font-weight: 600; letter-spacing: -0.02em; color: var(--foreground); }
+    .nav-tag { font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; color: var(--muted); letter-spacing: 0.2em; text-transform: uppercase; }
+    main {
+      position: relative; z-index: 10; flex: 1;
+      display: flex; flex-direction: column; align-items: center;
+      max-width: 48rem; margin: 0 auto; padding: 1rem 1.5rem 0; width: 100%;
+    }
+    .hero {
+      text-align: center; margin-bottom: 2.5rem;
+      opacity: 0; transform: translateY(30px);
+      animation: fadeUp 0.7s ease forwards;
+    }
+    h1 {
+      font-size: clamp(1.6rem, 4vw, 3.5rem);
+      font-weight: 600; letter-spacing: -0.03em; line-height: 1.15;
+      margin-bottom: 1rem; color: var(--foreground);
+    }
+    .subtitle { font-size: clamp(1rem, 2vw, 1.25rem); color: var(--muted); line-height: 1.6; }
+    form {
+      display: flex; flex-direction: row; gap: 0.75rem;
+      width: 100%; max-width: 28rem; margin: 0 auto 2.5rem;
+      opacity: 0; transform: translateY(30px);
+      animation: fadeUp 0.7s 0.3s ease forwards;
+    }
+    input[type="email"] {
+      flex: 1; height: 3rem;
+      background: var(--secondary); border: 1px solid var(--border);
+      border-radius: var(--radius); color: var(--foreground);
+      font-family: inherit; font-size: 0.875rem; padding: 0 1rem;
+      outline: none; transition: border-color 0.2s;
+    }
+    input[type="email"]::placeholder { color: var(--muted); }
+    input[type="email"]:focus { border-color: #555; }
+    button {
+      height: 3rem; padding: 0 1.75rem;
+      background: var(--foreground); color: var(--background);
+      border: none; border-radius: var(--radius);
+      font-family: inherit; font-size: 0.9rem; font-weight: 600;
+      cursor: pointer; white-space: nowrap;
+      transition: opacity 0.2s, transform 0.1s;
+    }
+    button:hover { opacity: 0.88; }
+    button:active { transform: scale(0.98); }
+    button:disabled { opacity: 0.5; cursor: not-allowed; }
+    .mockup-wrap {
+      display: flex; justify-content: center; width: 100%;
+      margin-top: auto; margin-bottom: -3rem;
+      opacity: 0; transform: translateY(30px);
+      animation: fadeUp 0.7s 0.45s ease forwards;
+    }
+    .mockup-wrap img { width: min(90vw, 1200px); height: auto; display: block; position: relative; z-index: 20; }
+    #toast {
+      position: fixed; bottom: 2rem; left: 50%;
+      transform: translateX(-50%) translateY(2rem);
+      background: var(--foreground); color: var(--background);
+      padding: 0.75rem 1.5rem; border-radius: 2rem;
+      font-size: 0.875rem; font-weight: 500;
+      opacity: 0; transition: all 0.3s ease; z-index: 100; white-space: nowrap;
+    }
+    #toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+    #toast.error { background: #ef4444; color: white; }
+    @keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }
+    @media (max-width: 600px) {
+      nav { padding: 1rem 1.25rem; }
+      form { flex-direction: column; }
+      button { width: 100%; }
+      .mockup-wrap { margin-bottom: -1.5rem; }
+    }
+  </style>
 </head>
-
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+<body>
+  <div class="page">
+    <div class="bg-earth">
+      <img src="https://raw.githubusercontent.com/idilciv/voidapp-launchpad/main/src/assets/earth-horizon.jpg" alt="" />
+      <div class="bg-fade"></div>
+    </div>
+    <nav>
+      <span class="nav-logo">Void</span>
+      <span class="nav-tag">Coming Soon</span>
+    </nav>
+    <main>
+      <div class="hero">
+        <h1>Attention is the most valuable asset in 21st century, protect it.</h1>
+        <p class="subtitle">Void is a focus app that blocks distracting apps to help you reduce your screen time.</p>
+      </div>
+      <form id="waitlist-form">
+        <input type="email" id="email" placeholder="Your Email Address" required />
+        <button type="submit" id="submit-btn">Get Notified</button>
+      </form>
+      <div class="mockup-wrap">
+        <img src="https://raw.githubusercontent.com/idilciv/voidapp-launchpad/main/src/assets/phone-mockup.png" alt="Void app preview" />
+      </div>
+    </main>
+  </div>
+  <div id="toast"></div>
+  <script>
+    const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzBhh2U4MeLqd5BMvt2wjTXAsWFJ_ZwF9zxNxEQBErTWwRJjr7xpqHYt_7zKx0VxYMu/exec";
+    function showToast(msg, isError = false) {
+      const t = document.getElementById("toast");
+      t.textContent = msg;
+      t.className = isError ? "error" : "";
+      void t.offsetWidth;
+      t.classList.add("show");
+      setTimeout(() => t.classList.remove("show"), 3500);
+    }
+    document.getElementById("waitlist-form").addEventListener("submit", async function(e) {
+      e.preventDefault();
+      const email = document.getElementById("email").value.trim();
+      const btn = document.getElementById("submit-btn");
+      if (!email) return;
+      btn.disabled = true;
+      btn.textContent = "Joining...";
+      try {
+        await fetch(SCRIPT_URL, {
+          method: "POST",
+          mode: "no-cors",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ email })
+        });
+        showToast("🎉 You're on the list! We'll be in touch.");
+        document.getElementById("email").value = "";
+      } catch (err) {
+        showToast("Something went wrong. Please try again.", true);
+      } finally {
+        btn.disabled = false;
+        btn.textContent = "Get Notified";
+      }
+    });
+  </script>
+</body>
 </html>
