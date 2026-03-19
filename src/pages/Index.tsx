@@ -3,9 +3,11 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { toast } from "sonner";
-import { supabase } from "@/integrations/supabase/client";
 import earthHorizon from "@/assets/earth-horizon.jpg";
 import handWithApp from "@/assets/phone-mockup.png";
+
+// 👇 Google Apps Script URL'ini buraya yapıştır
+const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzBhh2U4MeLqd5BMvt2wjTXAsWFJ_ZwF9zxNxEQBErTWwRJjr7xpqHYt_7zKx0VxYMu/exec";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -24,18 +26,24 @@ const Index = () => {
     e.preventDefault();
     if (!email || loading) return;
     setLoading(true);
-    const { error } = await supabase.from("waitlist").insert({ email });
-    setLoading(false);
-    if (error) {
-      if (error.code === "23505") {
-        toast.info("You're already on the list!");
-      } else {
-        toast.error("Something went wrong. Please try again.");
-      }
-      return;
+
+    try {
+      const response = await fetch(GOOGLE_SCRIPT_URL, {
+        method: "POST",
+        mode: "no-cors", // Google Apps Script requires no-cors
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email }),
+      });
+
+      // no-cors modunda response.ok her zaman false gelir,
+      // bu yüzden hata olmadıysa başarılı sayıyoruz
+      toast.success("You're on the list! We'll be in touch. 🎉");
+      setEmail("");
+    } catch (error) {
+      toast.error("Something went wrong. Please try again.");
+    } finally {
+      setLoading(false);
     }
-    toast.success("You're on the list! We'll be in touch.");
-    setEmail("");
   };
 
   return (
